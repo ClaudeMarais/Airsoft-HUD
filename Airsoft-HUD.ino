@@ -7,6 +7,8 @@
 // Full documentation:  AirsoftHUD.pdf
 // Wiring Diagram:      WiringDiagram.fzz
 // 3D Models:           In folder "3DModels"
+//
+// NOTE: Device won't connect to PC via USB when in deep sleep. Therefore, first switch on / wake up before you upload code
 
 //#define DEBUG 1
 
@@ -59,7 +61,7 @@ int numDeaths = 0;
 
 // Keep track of shots
 int numShots = 0;
-int maxNumBBsInMagazine = 20;   // Hardcoded to 200 for EMG / KRYTAC magazine
+int maxNumBBsInMagazine = 135;   // EMG / KRYTAC 200rd/50rd Selectable Capacity Magazine actually only takes 135 BBs
 
 // Flash display when magazine is running low on BBs
 static const int numBBsToStartFlashing = 10;
