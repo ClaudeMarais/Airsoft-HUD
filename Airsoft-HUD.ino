@@ -61,7 +61,17 @@ int numDeaths = 0;
 
 // Keep track of shots
 int numShots = 0;
-int maxNumBBsInMagazine = 135;   // EMG / KRYTAC 200rd/50rd Selectable Capacity Magazine actually only takes 135 BBs
+
+// Handle different magazine sizes
+int selectedMagazineSize = 1;
+unsigned long lastMagazineResetTime = 0;
+static const int numMagazineSizes = 3;
+static const int maxNumBBsInMagazine[numMagazineSizes] =
+{
+  135,  // EMG / KRYTAC 200rd/50rd Selectable Capacity Magazine actually only takes 135 BBs
+  110,  // Sometimes carry a speed loader with 100 bbs. Will probably refill magazine if 10 BBs are left, so define a 110 magazine size
+  20    // For testing purposes
+};   
 
 // Flash display when magazine is running low on BBs
 static const int numBBsToStartFlashing = 10;
@@ -150,6 +160,15 @@ void loop()
       numShots = 0;
       bUpdateDisplay = true;
       flashNumBBsLeft.Stop();
+
+      // Doing a double press within 2 seconds will reset to another magazine size
+      if ((nowTime - lastMagazineResetTime) < 2000)
+      {
+        selectedMagazineSize++;
+        selectedMagazineSize %= numMagazineSizes;
+      }
+      
+      lastMagazineResetTime = millis();
     }
     else
     {
@@ -183,7 +202,7 @@ void loop()
 void UpdateDisplay()
 {
   // Don't display number of BBs shot, but rather how many BBs are left in magazine
-  int numShotsLeft = max(maxNumBBsInMagazine - numShots, 0);
+  int numShotsLeft = max(maxNumBBsInMagazine[selectedMagazineSize] - numShots, 0);
   FlashIfLowOnBBs(numShotsLeft);
 
   // Only update the display when really needed
@@ -273,6 +292,7 @@ void SaveData()
   persistedData.putInt("numKills", (int32_t)numKills);
   persistedData.putInt("numDeaths", (int32_t)numDeaths);
   persistedData.putInt("numShots", (int32_t)numShots);
+  persistedData.putInt("selectedMagSize", (int32_t)selectedMagazineSize);
   persistedData.end();
 }
 
@@ -282,5 +302,6 @@ void LoadData()
   numKills = persistedData.getInt("numKills");
   numDeaths = persistedData.getInt("numDeaths");
   numShots = persistedData.getInt("numShots");
+  selectedMagazineSize = persistedData.getInt("selectedMagSize");
   persistedData.end();
 }
