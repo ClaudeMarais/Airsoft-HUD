@@ -5,6 +5,6 @@
 
  Video: https://youtu.be/BZJjDX5xyRM
 
-![Image1](https://github.com/ClaudeMarais/Airsoft-HUD/Images/image1.jpg?raw=true)
+![Image1](https://github.com/ClaudeMarais/Airsoft-HUD/blob/main/Images/image1.jpg?raw=true)
 
-![Image2](https://github.com/ClaudeMarais/Airsoft-HUD/Images/image2.jpg?raw=true)
+![Image2](https://github.com/ClaudeMarais/Airsoft-HUD/blob/main/Images/image2.jpg?raw=true)
