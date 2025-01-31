@@ -7,6 +7,6 @@
 
 ![Demo](https://github.com/ClaudeMarais/AlfaRomeoGiulia_DashboardInfo_ESP32-S3/blob/main/Images/Demo.gif?raw=true)
 
-![Image1](https://github.com/ClaudeMarais/Airsoft-HUD/Images/image1.jpg?raw=true)
+![Image1](https://github.com/ClaudeMarais/Airsoft-HUD/blob/main/Images/image1.jpg?raw=true)
 
-![Image2](https://github.com/ClaudeMarais/Airsoft-HUD/Images/image2.jpg?raw=true)
+![Image2](https://github.com/ClaudeMarais/Airsoft-HUD/blob/main/Images/image2.jpg?raw=true)
