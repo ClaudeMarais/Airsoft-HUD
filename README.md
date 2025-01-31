@@ -5,7 +5,7 @@
 
  Video: https://youtu.be/BZJjDX5xyRM
 
-![Demo](https://github.com/ClaudeMarais/AlfaRomeoGiulia_DashboardInfo_ESP32-S3/blob/main/Images/Demo.gif?raw=true)
+![Demo](https://github.com/ClaudeMarais/Airsoft-HUD/blob/main/Images/Demo.gif?raw=true)
 
 ![Image1](https://github.com/ClaudeMarais/Airsoft-HUD/blob/main/Images/image1.jpg?raw=true)
 
